@@ -1,9 +1,8 @@
 %define	module	Carp-Clan
 
-%define	version	5.3
+%define	version	5.9
 
-%define	rel	3
-%define	release	%mkrel %{rel}
+%define	release	%mkrel 1
 
 %define	pdir	Carp
 
