@@ -22,6 +22,7 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
+BuildRequires:  perl(Test::Exception)
 BuildArch:	noarch
 
 %description
