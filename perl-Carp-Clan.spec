@@ -54,7 +54,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES.txt README.txt
 %{_mandir}/*/*
 %{perl_vendorlib}/%{pdir}
 
