@@ -1,6 +1,6 @@
 %define	module	Carp-Clan
 
-%define	version	5.9
+%define	version	6.00
 
 %define	release	%mkrel 1
 
