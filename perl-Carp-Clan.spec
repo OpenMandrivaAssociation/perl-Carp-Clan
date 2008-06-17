@@ -2,7 +2,7 @@
 
 %define	version	6.00
 
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 %define	pdir	Carp
 
