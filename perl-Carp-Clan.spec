@@ -1,32 +1,30 @@
-%define	module	Carp-Clan
-
-%define	version	6.00
-
-%define	release	%mkrel 4
-
-%define	pdir	Carp
+%define	upstream_name	 Carp-Clan
+%define	upstream_version 6.04
 
 %define TEST	1
 %{?_with_test: %{expand: %%global TEST 1}}
 %{?_without_test: %{expand: %%global TEST 0}}
 
-Summary: 	%{module} module for perl
-Name: 		perl-%{module}
-Version: 	%{version}
-Release:	%{release}
-License: 	GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary: 	%{upstream_name} module for perl
+License: 	GPL+ or Artistic
 Group:		Development/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Carp/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 BuildRequires:  perl(Test::Exception)
+
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-%{module} module for perl.
+%{upstream_name} module for perl.
 This module reports errors from the perspective of the caller of a
 "clan" of modules, similar to "Carp.pm" itself. But instead of giving
 it a number of levels to skip on the calling stack, you give it a
@@ -34,7 +32,7 @@ pattern to characterize the package names of the "clan" of modules
 which shall never be blamed for any error.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -55,5 +53,4 @@ rm -rf %{buildroot}
 %files
 %defattr(644,root,root,755)
 %{_mandir}/*/*
-%{perl_vendorlib}/%{pdir}
-
+%{perl_vendorlib}/Carp
