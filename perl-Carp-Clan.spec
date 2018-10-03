@@ -1,5 +1,5 @@
 %define	upstream_name	 Carp-Clan
-%define	upstream_version 6.04
+%define	upstream_version 6.06
 
 %define TEST	1
 %{?_with_test:	%{expand:	%%global TEST 1}}
@@ -8,7 +8,7 @@
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	17
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
