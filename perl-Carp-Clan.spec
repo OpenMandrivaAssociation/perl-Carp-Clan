@@ -1,5 +1,5 @@
 %define	upstream_name	 Carp-Clan
-%define	upstream_version 6.06
+%define	upstream_version 6.08
 
 %define TEST	1
 %{?_with_test:	%{expand:	%%global TEST 1}}
@@ -7,12 +7,12 @@
 
 Summary:	%{upstream_name} module for perl
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Carp/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/karenetheridge/Carp-Clan
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Carp-Clan-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl-devel
